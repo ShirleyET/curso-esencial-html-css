@@ -1,0 +1,86 @@
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-regular.otf');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-italic.otf');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold.otf');
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-regular.otf');
+  font-style: italic;
+  font-weight: bold;
+}
+:root{
+  font-size: 18px;
+  --gray30:#212121;
+  --gray20:#212429;
+  --gray10:#616161;
+}
+
+
+body {
+  color: var(--gray30);
+  font-family: charter;
+}
+a {
+  color: var(--gray30);
+}
+header{
+  /* --gray10: red; => para poder cambiar de color del menu en caso lo requiera */
+  font-size: 16px;
+  color: var(--gray10);
+}
+
+header a {
+  color: var(--gray10);
+   text-decoration: none;
+}
+header a:hover{
+  color:var(--gray);
+}
+nav details summary{
+  font-weight: bold;
+}
+
+
+/* DAR COLOR AL MENU
+ol li:first-child => es para el inicio el primero submenu
+ol li:last-child => es para el ultimo de la fila del submenu
+ol li:nth-child(2n) => pares e impares
+ol li:nth-child(1n) => seleccionar todos igual que ol li
+ol li:nth-child(odd) => para los impares
+ol li:nth-child(even) => para los pares
+*/
+
+h1{
+  font-size: 60px;
+  /* text-decoration: underline; = para que este subrayado */
+  /* font-size: 3.75em; */
+}
+h2{
+  font-size: 2em;/*2em = 32px*/
+}
+h3{
+  font-size: 1.5em;/*1.5em = 24px*/
+}
+
+
+/*1em = 16*/
+
+@media screen and (max-width: 400px){
+  body{
+    font-size: 5px;
+  }
+}
