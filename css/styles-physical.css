@@ -1,0 +1,172 @@
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-regular.otf');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-italic.otf');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold.otf');
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-regular.otf');
+  font-style: italic;
+  font-weight: bold;
+}
+:root{
+  font-size: 18px;
+  --gray30:#212121;
+  --gray20:#212429;
+  --gray10:#616161;
+}
+
+
+body {
+  color: var(--gray30);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;/*para quitarle los bordes blancos a la imagen*/
+  /* font-family: charter; */
+}
+a {
+  color: var(--gray30);
+}
+header{
+  /* --gray10: red; => para poder cambiar de color del menu en caso lo requiera */
+  font-size: 16px;
+  color: var(--gray10);
+}
+
+header a {
+  color: var(--gray10);
+   text-decoration: none;
+}
+header a:hover{
+  color:var(--gray);
+}
+nav details summary{
+  font-weight: bold;
+}
+
+
+/* DAR COLOR AL MENU
+ol li:first-child => es para el inicio el primero submenu
+ol li:last-child => es para el ultimo de la fila del submenu
+ol li:nth-child(2n) => pares e impares
+ol li:nth-child(1n) => seleccionar todos igual que ol li
+ol li:nth-child(odd) => para los impares
+ol li:nth-child(even) => para los pares
+*/
+
+h1{
+  font-size: 60px;
+  /* text-decoration: underline; = para que este subrayado */
+  /* font-size: 3.75em; */
+  margin-top: 64px;
+  margin-bottom: 16px;
+  /* margin-left: 10px;
+  margin-right: 10px;*/
+  /* margin: top right bottom left; */
+  /*margin: 64px 10px 16px 10px;
+  margin: 10px 5px;
+  margin: 30px 20px 10px; */
+}
+
+h1 ~ p {
+  margin-bottom: 64px;
+}
+hr{
+  margin: 64px 0;
+  /* background: red; */
+}
+
+h2{
+  font-size: 2em;/*2em = 32px*/
+  margin: 40px 0;
+  margin-top: 64px 0 40px;
+  font-weight: normal;
+}
+h3{
+  font-size: 1.5em;/*1.5em = 24px*/
+  margin-top: 16px;
+  margin-bottom: 24px;
+  font-weight: normal;
+}
+/*1em = 16*/
+
+pre{
+  background:  #FEC62E;
+}
+blockquote{
+  margin: 32px 0;
+}
+/* para hacer un degradado de las imagenes y aparezca un poco blanco en la parte baja*/
+.hero{
+  background-image: linear-gradient(to top, rgba(255,255,255,.3), transparent), url('../images/patron.png');
+
+  /*background-size: cover; =>  hace lo posible para que se expanda
+  background-position:...;
+  top => para que valla centrado pero hacia el otro lado
+  left =>para que este en la izquierda
+  right => para que este en la derecha
+  center => para que este en el centro
+  background-repeat: no-repeat; => para que no se repita la imagen y cubre el espacio*/
+  height: 350px;
+}
+.section-content{
+  margin-top: 164px;
+}
+.section-content:first-of-type{
+  margin: 0; /*desde setup a github*/
+}
+.section-content ol li{
+  line-height: 24px;
+}
+.section-content ul li{
+  margin-top: 16px;
+}
+.section-content + hr {
+  display: none;
+}
+.section-content img{
+  margin-top: 40px;
+}
+
+.section-content{
+  counter-reset: titleList;
+}
+
+.section-content h3{
+  counter-increment: titleList;
+}
+
+.section-content h3::before{
+  content: counter(titleList,decimal);
+}
+
+.section-content h3::after{
+  content: '';
+  width: 32px;
+  height: 4px;
+  background: var(--gray30);
+  display: inline-block;
+}
+
+/* ::selection{
+  background: red;
+}   para cambiar de color al sombrearlo*/
+
+
+@media screen and (max-width: 400px){
+  body{
+    font-size: 5px;
+  }
+}
